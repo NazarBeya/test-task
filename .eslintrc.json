@@ -1,0 +1,107 @@
+{
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "etc"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:etc/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "exclude": [
+      "vite.config.ts"
+    ],
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "tsx": true
+    }
+  },
+  "ignorePatterns": [
+    ".eslintrc.json",
+    "vite.config.ts"
+  ],
+  "rules": {
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/object-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "arrow-body-style": "off",
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "up",
+          "down"
+        ]
+      }
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 140,
+        "ignoreUrls": true,
+        "ignorePattern": "await queryRunner.query"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.ts",
+          "**/*.stories.tsx",
+          "test/**"
+        ]
+      }
+    ],
+    "etc/no-commented-out-code": "error",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "react/no-array-index-key": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": [
+      "off",
+      {
+        "forbidDefaultForRequired": true,
+        "classes": "defaultProps",
+        "functions": "defaultArguments"
+      }
+    ]
+  }
+}
